@@ -19,13 +19,10 @@ Using an RPi Camera Module and ELM327 BT OBDII Reader, the RPi AutoBB is a helpf
 * [ELM327 BT OBDII Reader](<https://www.amazon.com/dp/B074DWH8JR/ref=cm_sw_r_cp_api_i_8iuzEb95CGZB7>)
 * [RPi3](<https://www.adafruit.com/product/3055>), [RPi4](<https://www.adafruit.com/product/4296>), or [RPi Zero W](<https://www.adafruit.com/product/3400>)
 
-To begin, run ``` ./Black_Box_Install ``` or ``` python3 Black_Box_Install.py ``` to install all necessary libraries and configure PATH usage. (You will need a WiFi connection for setup)
+### Getting Started
+
+To begin, run ``` sudo ./setup.sh ``` to install all necessary libraries and configure PATH usage. (You will need a WiFi connection for setup)
 Simply follow all instructions in the installer.
-
-### Usage
-
-To access the help menu type ``` BB info ``` and execute in terminal. 
-
 
 ## Built With
 
@@ -41,7 +38,7 @@ To access the help menu type ``` BB info ``` and execute in terminal.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.txt file for details
+This project is licensed under the MIT License - see the LICENSE file for details
 
 
 ## Acknowledgments

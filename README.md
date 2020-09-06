@@ -1,6 +1,6 @@
 # RPi Automotive Black Box
 
-Using an RPi Camera Module, ELM327 BT OBDII Reader, and RPi3+, the AutoBB is a helpful device for centralizing OBDII Car diagnostics and Dashcam video all in one.
+Using an RPi Camera Module and ELM327 BT OBDII Reader, the RPi AutoBB is a helpful device for centralizing OBDII Car diagnostics and Dashcam video all in one.
 
 ## Features
 
@@ -34,9 +34,7 @@ Simply follow all instructions in the installer.
 
 ## Authors
 
-* **Cisc0-gif** - *Main Contributor/Author*
-* Email: Ecorp7@protonmail.com
-* Discord: Fergo310#5226
+* **Cisc0-gif** - *Main Contributor/Author*: Ecorp7@protonmail.com
 
 ## License
 

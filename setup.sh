@@ -29,13 +29,24 @@ fi
 
 printf "${BLUE}[*] Updating, Upgrading, and Installing necessary packages...${NC}\n"
 sudo apt update && sudo apt upgrade && sudo apt autoremove
-sudo apt-get install motion gpac ssh samba samba-common-bin hostapd dnsmasq apache2 aircrack-ng xrdp -y
+sudo apt-get install motion gpac ssh samba samba-common-bin hostapd dnsmasq apache2 aircrack-ng -y
 
 printf "${BLUE}[*] Creating directories...${NC}\n"
 sudo mkdir /home/pi/.motion
+sudo mkdir /home/pi/OBD2_DIAGNOSTICS
 sudo mkdir /home/pi/PARKED
 sudo mkdir /home/pi/DRIVING
 sudo mkdir /home/pi/BB_NETWORK
+
+printf "${GREEN}[+]Done! ${BLUE} \n[*]Installing pyODB Packages, Libraries, and Repo...${NC}\n"
+sudo apt install python-serial xrdp -y
+sudo apt install bluetooth bluez-utils blueman -y
+sudo apt install python-wxgtk2.8 python-wxtools wx2.8-i18n libwxgtk2.8-dev -y
+sudo apt install git-core -y
+sudo git clone https://github.com/Pbartek/pyobd-pi.git
+sudo mv pyobd-pi /home/pi/OBD2_DIAGNOSTICS
+printf "${GREEN}[+]Done! ${BLUE} \n[*]Remember to pair your ELM327 before you use pyodb-pi tools!${NC}\n"
+wait_func
 
 printf "${BLUE}[*] Writing to '/etc/dhcpcd.conf' ${NC}\n"
 echo 'denyinterfaces wlan0' >> /etc/dhcpcd.conf
@@ -77,6 +88,7 @@ printf "${BLUE}[*] Downloading 'SecureHTTPServer.py' source...${NC}\n"
 sudo curl https://pastebin.com/raw/vaeFt2Bn > /home/pi/.motion/SecureHTTPServer.py
 
 printf "${BLUE}[*] Writing aliases to '.bashrc'...${NC}\n"
+echo "alias pyOBD2_GUI='sudo python /home/pi/OBD2_DIAGNOSTICS'" > /home/pi/.bashrc
 echo "alias BB_Dashcam_on='bash /home/pi/.motion/driving.sh'" > /home/pi/.bashrc
 echo "alias BB_Dashcam_parked='bash /home/pi/.motion/parked.sh'" > /home/pi.bashrc
 echo "alias BB_Dashcam_off='sudo service motion stop && ps aux | grep python'" > /home/pi/.bashrc
